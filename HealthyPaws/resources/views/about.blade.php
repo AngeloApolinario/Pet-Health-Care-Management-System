@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="bg-gray-50 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-bold text-center text-gray-800">
@@ -113,4 +113,4 @@
             </div>
         </div>
     </div>
-</x-layout>
+</x-app-layout>

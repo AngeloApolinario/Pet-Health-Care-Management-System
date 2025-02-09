@@ -1,52 +1,43 @@
 <?php
 
-use Illuminate\Support\Arr;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome', [
-        'pets' => [
-            [
-                'id' => 1,
-                'petname'  => 'billy',
-                'breed' => 'shitzu'
-            ],
-            [
-                'id' => 2,
-                'petname'  => 'molly',
-                'breed' => 'shitzu'
-            ]
-        ]
-    ]);
+    return view('auth.login');
 });
+
+
 Route::get('/about', function () {
     return view('about');
-});
-Route::get('/pet', function () {
-    return view('pet');
-});
+})->name('about');
+
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
-Route::get('/pet/{id}', function ($id) {
-    $pets = [
-        [
-            'id' => 1,
-            'petname'  => 'billy',
-            'breed' => 'shitzu'
-        ],
-        [
-            'id' => 2,
-            'petname'  => 'molly',
-            'breed' => 'shitzu'
-        ]
-    ];
-
-    $pet = Arr::first($pets, fn($pet) => $pet['id' == $id]);
-
-    dd($pet);
-
-
+Route::get('/pet', function () {
     return view('pet');
+})->name('pet');
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
+require __DIR__ . '/auth.php';

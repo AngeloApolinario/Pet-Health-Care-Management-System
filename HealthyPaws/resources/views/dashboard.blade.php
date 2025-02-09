@@ -1,7 +1,7 @@
-<x-layout>
+<x-app-layout>
 
 
-    <div class="relative bg-cover bg-center h-screen" style="background-image: url('https://via.placeholder.com/1200x800');">
+    <div class="relative bg-cover bg-center h-screen" style="background-image: url('/pawbackground.png');">
         <div class="absolute inset-0 bg-black opacity-40"></div> <!-- Overlay for text visibility -->
 
         <div class="relative flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
@@ -36,4 +36,4 @@
     </section>
 
 
-</x-layout>
+</x-app-layout>
