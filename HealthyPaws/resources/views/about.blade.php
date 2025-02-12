@@ -32,35 +32,35 @@
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
                     <!-- Project Manager -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="https://via.placeholder.com/150" alt="Nikus Angelo">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('nikus.jpg') }}"  alt="Nikus Angelo">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Nikus Angelo</h3>
                         <p class="text-center text-gray-600">Project Manager</p>
                     </div>
 
                     <!-- Integration Manager -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="https://via.placeholder.com/150" alt="Axel Tumpalan">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('axel.jpg') }}"  alt="Axel Tumpalan">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Axel Tumpalan</h3>
                         <p class="text-center text-gray-600">Integration Manager</p>
                     </div>
 
                     <!-- Web Architect -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="https://via.placeholder.com/150" alt="Richmond Villaluz">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('richmond.jfif') }}" alt="Richmond Villaluz">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Richmond Villaluz</h3>
                         <p class="text-center text-gray-600">Web Architect</p>
                     </div>
 
                     <!-- UI/UX Designer -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="https://via.placeholder.com/150" alt="Venice Godoy">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('venice.jfif') }}"  alt="Venice Godoy">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Venice Godoy</h3>
                         <p class="text-center text-gray-600">UI/UX Designer</p>
                     </div>
 
                     <!-- Database Designer -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="https://via.placeholder.com/150" alt="Elionor Oliveros">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('ella.jfif') }}" alt="Elionor Oliveros">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Elionor Oliveros</h3>
                         <p class="text-center text-gray-600">Database Designer</p>
                     </div>

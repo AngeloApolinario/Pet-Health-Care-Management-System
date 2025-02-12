@@ -10,9 +10,9 @@
             </p>
 
             <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                <!-- Service 1: Health Consultation -->
-                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-all">
-                    <img class="w-32 h-32 mx-auto" src="https://via.placeholder.com/150" alt="Health Consultation">
+               
+                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-transform transform hover:scale-105 duration-300">
+                    <img class="w-32 h-32 mx-auto" src="{{ asset('pethealth.png') }}" alt="Health Consultation">
                     <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Pet Health Consultation</h3>
                     <p class="text-center text-gray-600 mt-2">
                         Ensure your pet is in optimal health with a consultation from our expert veterinarians.
@@ -24,8 +24,8 @@
                     </div>
                 </div>
 
-                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-all">
-                    <img class="w-32 h-32 mx-auto" src="https://via.placeholder.com/150" alt="Deworming Services">
+                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-transform transform hover:scale-105 duration-300">
+                    <img class="w-32 h-32 mx-auto" src="{{ asset('deworming.png') }}" alt="Deworming Services">
                     <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Deworming Services</h3>
                     <p class="text-center text-gray-600 mt-2">
                         Keep your pet healthy with our professional deworming services. Protect them from harmful parasites today.
@@ -36,8 +36,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-all">
-                    <img class="w-32 h-32 mx-auto" src="https://via.placeholder.com/150" alt="Neutering Procedure">
+                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-transform transform hover:scale-105 duration-300">
+                    <img class="w-32 h-32 mx-auto" src="{{ asset('neutering.png') }}" alt="Neutering Procedure">
                     <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Neutering (Castration)</h3>
                     <p class="text-center text-gray-600 mt-2">
                         Neutering is a safe surgical procedure that removes a male dog's testicles to prevent reproduction and improve behavior.
@@ -50,11 +50,7 @@
                     </div>
                 </div>
 
-
             </div>
-
-
-
         </div>
     </div>
 </x-app-layout>
