@@ -7,14 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
 {
-    /** @use HasFactory<\Database\Factories\PetFactory> */
     use HasFactory;
+    protected $table = 'pets';
 
-    protected $table = 'pet';
+    protected $primaryKey = 'petID';
 
     protected $fillable = [
-        'name',
-        'breed',
-        'age'
+        'user_id', 'name', 'breed', 'age', 'gender'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
