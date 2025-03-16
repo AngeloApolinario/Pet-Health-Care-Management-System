@@ -14,8 +14,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-br from-gray-100 to-gray-200">
+<body class="font-sans text-gray-900 antialiased relative">
+
+    <div class="absolute inset-0 bg-cover bg-center" 
+        style="background-image: url('{{ asset('background.png') }}'); filter: blur(8px); transform: scale(1.1);">
+    </div>
+
+
+    <div class="relative min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-opacity-50">
         <div class="flex flex-col items-center">
             <a href="/" class="flex flex-col items-center">
                 <img src="{{ asset('/logo.png') }}" class="h-40 w-auto" alt="Healthy Paws Logo" />

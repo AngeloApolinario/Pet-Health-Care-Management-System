@@ -72,12 +72,13 @@ class PetController extends Controller
 
    
     public function destroy(Pet $pet)
-    {
-        $this->authorizePet($pet);
-        $pet->delete();
+{
+    $this->authorizePet($pet);
+    $pet->delete();
 
-        return redirect()->route('pets.index')->with('success', 'Pet deleted successfully!');
-    }
+    return redirect()->route('pets.index')->with('success', 'Pet deleted successfully!');
+}
+
 
    
     private function authorizePet(Pet $pet)

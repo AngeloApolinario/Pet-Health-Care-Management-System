@@ -17,21 +17,32 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen" style="background-image: url('/pawbackground.png');">
-        @include('layouts.navigation')
+    <div class="min-h-screen relative">
+        <!-- Navbar (Ensure it stays visible) -->
+        <div class="relative z-20">
+            @include('layouts.navigation')
+        </div>
 
-        <!-- Page Heading -->
+        <!-- Page Heading (Ensure it stays above the blur) -->
         @isset($header)
-        <header class="bg-white shadow">
+        <header class="bg-white shadow relative z-20">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
         </header>
         @endisset
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        <!-- Main Section with Blurred Background -->\
+        <main class="relative z-10">
+            <!-- Background Layer (Blurred but does not cover navbar) -->
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('{{ asset('background.png') }}'); filter: blur(8px); transform: scale(1.1); z-index: -1;">
+            </div>
+
+            <!-- Content Wrapper -->
+            <div class="relative z-10 p-6 bg-white bg-opacity-80 rounded-lg shadow-lg max-w-7xl mx-auto mt-5">
+                {{ $slot }}
+            </div>
         </main>
     </div>
 </body>

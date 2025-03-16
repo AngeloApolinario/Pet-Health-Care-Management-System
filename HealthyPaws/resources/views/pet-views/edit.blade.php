@@ -1,35 +1,46 @@
 <x-app-layout>
-    <div class="container">
-        <h2>Edit Pet</h2>
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-lg mt-10">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Edit Pet</h2>
 
-        <form action="{{ route('pets.update', $pet->id) }}" method="POST">
+        <form action="{{ route('pets.update', $pet) }}" method="POST" class="space-y-6">
             @csrf
             @method('PUT')
 
-            <div class="mb-3">
-                <label for="name" class="form-label">Pet Name</label>
-                <input type="text" name="name" class="form-control" value="{{ $pet->name }}" required>
+            <div>
+                <label for="name" class="block text-lg font-medium text-gray-700">Pet Name</label>
+                <input type="text" name="name" value="{{ old('name', $pet->name) }}" required 
+                       class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300">
             </div>
 
-            <div class="mb-3">
-                <label for="breed" class="form-label">Breed</label>
-                <input type="text" name="breed" class="form-control" value="{{ $pet->breed }}">
+            <div>
+                <label for="breed" class="block text-lg font-medium text-gray-700">Breed</label>
+                <input type="text" name="breed" value="{{ old('breed', $pet->breed) }}" 
+                       class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300">
             </div>
 
-            <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" name="age" class="form-control" value="{{ $pet->age }}">
+            <div>
+                <label for="age" class="block text-lg font-medium text-gray-700">Age</label>
+                <input type="number" name="age" value="{{ old('age', $pet->age) }}" 
+                       class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300">
             </div>
 
-            <div class="mb-3">
-                <label for="gender" class="form-label">Gender</label>
-                <select name="gender" class="form-control" required>
+            <div>
+                <label for="gender" class="block text-lg font-medium text-gray-700">Gender</label>
+                <select name="gender" required 
+                        class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300">
                     <option value="Male" {{ $pet->gender == 'Male' ? 'selected' : '' }}>Male</option>
                     <option value="Female" {{ $pet->gender == 'Female' ? 'selected' : '' }}>Female</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-success">Update Pet</button>
+            <div class="flex justify-end space-x-4">
+                <a href="{{ route('pets.index') }}" class="px-4 py-2 bg-gray-400 text-white rounded-lg shadow hover:bg-gray-500">
+                    Cancel
+                </a>
+                <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300">
+                    Update Pet
+                </button>
+            </div>
         </form>
     </div>
 </x-app-layout>

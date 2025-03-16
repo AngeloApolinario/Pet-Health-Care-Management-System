@@ -1,34 +1,38 @@
 <x-app-layout>
-    <div class="container">
-        <h2>Add New Pet</h2>
-        
-        <form action="{{ route('pets.store') }}" method="POST">
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-2xl shadow-md mt-10">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Add New Pet</h2>
+
+        <form action="{{ route('pets.store') }}" method="POST" class="space-y-4">
             @csrf
 
-            <div class="mb-3">
-                <label for="name" class="form-label">Pet Name</label>
-                <input type="text" name="name" class="form-control" required>
+            <div>
+                <label for="name" class="block text-gray-700 font-semibold mb-1">Pet Name</label>
+                <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-400 focus:outline-none" required>
             </div>
 
-            <div class="mb-3">
-                <label for="breed" class="form-label">Breed</label>
-                <input type="text" name="breed" class="form-control">
+            <div>
+                <label for="breed" class="block text-gray-700 font-semibold mb-1">Breed</label>
+                <input type="text" name="breed" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-400 focus:outline-none">
             </div>
 
-            <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" name="age" class="form-control">
+            <div>
+                <label for="age" class="block text-gray-700 font-semibold mb-1">Age</label>
+                <input type="number" name="age" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-400 focus:outline-none">
             </div>
 
-            <div class="mb-3">
-                <label for="gender" class="form-label">Gender</label>
-                <select name="gender" class="form-control" required>
+            <div>
+                <label for="gender" class="block text-gray-700 font-semibold mb-1">Gender</label>
+                <select name="gender" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-400 focus:outline-none" required>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-success">Add Pet</button>
+            <div class="flex justify-center">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all">
+                    Add Pet
+                </button>
+            </div>
         </form>
     </div>
 </x-app-layout>
