@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="bg-gray-50 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px- sm:px-6 lg:px-8 shadow-lg ">
             <h1 class="text-4xl font-bold text-center text-gray-800">
                 About Healthy Paws
             </h1>
@@ -32,14 +32,14 @@
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
                     <!-- Project Manager -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('nikus.jpg') }}"  alt="Nikus Angelo">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('nikus.jpg') }}" alt="Nikus Angelo">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Nikus Angelo</h3>
                         <p class="text-center text-gray-600">Project Manager</p>
                     </div>
 
                     <!-- Integration Manager -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('axel.jpg') }}"  alt="Axel Tumpalan">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('axel.jpg') }}" alt="Axel Tumpalan">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Axel Tumpalan</h3>
                         <p class="text-center text-gray-600">Integration Manager</p>
                     </div>
@@ -53,7 +53,7 @@
 
                     <!-- UI/UX Designer -->
                     <div class="bg-white shadow-lg rounded-lg p-6">
-                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('venice.jfif') }}"  alt="Venice Godoy">
+                        <img class="w-32 h-32 rounded-full mx-auto" src="{{ asset('venice.jfif') }}" alt="Venice Godoy">
                         <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Venice Godoy</h3>
                         <p class="text-center text-gray-600">UI/UX Designer</p>
                     </div>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="mt-20 bg-gray-100 py-12">
+            <div class="mt-20 bg-gray-100 py-12 px-4 rounded-lg">
                 <div class="max-w-7xl mx-auto text-center">
                     <h2 class="text-3xl font-semibold text-gray-800">Our Services</h2>
                     <p class="mt-4 text-lg text-gray-600">
@@ -102,7 +102,7 @@
                 </div>
             </div>
 
-            <div class="mt-20 text-center">
+            <div class="mt-20 text-center py-4">
                 <h2 class="text-3xl font-semibold text-gray-800">Get In Touch</h2>
                 <p class="mt-4 text-lg text-gray-600">
                     Have questions? Reach out to us, and we'll be happy to assist you.

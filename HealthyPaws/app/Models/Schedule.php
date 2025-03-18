@@ -7,11 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schedule extends Model
 {
-    /** @use HasFactory<\Database\Factories\ScheduleFactory> */
     use HasFactory;
 
-    protected $fillable = [
-        'dateTime',
-        'reason'
-    ];
+    protected $fillable = ['user_id', 'pet_id', 'dateTime', 'reason'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function pet()
+    {
+        return $this->belongsTo(Pet::class);
+    }
 }

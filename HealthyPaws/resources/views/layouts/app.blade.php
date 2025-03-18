@@ -32,7 +32,7 @@
         </header>
         @endisset
 
-        <!-- Main Section with Blurred Background -->\
+        <!-- Main Section with Blurred Background -->
         <main class="relative z-10">
             <!-- Background Layer (Blurred but does not cover navbar) -->
             <div class="absolute inset-0 bg-cover bg-center"
@@ -40,7 +40,7 @@
             </div>
 
             <!-- Content Wrapper -->
-            <div class="relative z-10 p-6 bg-white bg-opacity-80 rounded-lg shadow-lg max-w-7xl mx-auto mt-5">
+            <div class="relative z-10 p-6 rounded-lg  max-w-7xl mx-auto mt-5">
                 {{ $slot }}
             </div>
         </main>

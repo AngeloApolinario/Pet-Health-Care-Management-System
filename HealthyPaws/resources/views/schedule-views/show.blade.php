@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="max-w-lg mx-auto mt-10 bg-white shadow-md rounded-lg p-6">
         <h1 class="text-2xl font-bold text-gray-700 mb-4">Appointment Details</h1>
 
@@ -19,4 +19,4 @@
             </form>
         </div>
     </div>
-</x-layout>
+</x-app-layout>

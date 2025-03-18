@@ -13,11 +13,19 @@ class Pet extends Model
     protected $primaryKey = 'petID';
 
     protected $fillable = [
-        'user_id', 'name', 'breed', 'age', 'gender'
+        'user_id',
+        'name',
+        'breed',
+        'age',
+        'gender'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
     }
 }

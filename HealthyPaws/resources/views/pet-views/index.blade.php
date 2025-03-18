@@ -7,9 +7,9 @@
         </a>
 
         @if(session('success'))
-            <div class="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-                {{ session('success') }}
-            </div>
+        <div class="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+            {{ session('success') }}
+        </div>
         @endif
 
         <div class="mt-6 overflow-hidden rounded-lg shadow-lg">

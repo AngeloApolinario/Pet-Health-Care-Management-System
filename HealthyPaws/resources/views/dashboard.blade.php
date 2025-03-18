@@ -1,11 +1,11 @@
 <x-app-layout>
-    <div class="relative flex flex-col md:flex-row items-center justify-center h-screen bg-gray-100 px-4 sm:px-6 lg:px-8 gap-40">
-   
+    <div class="relative flex flex-col bg-white md:flex-row items-center justify-center h-screen  px-4 sm:px-6 lg:px-8 gap-40 shadow-lg">
+
         <div class="w-full md:w-1/2 h-96 md:h-full flex justify-center items-center animate-fade-in-left">
             <img src="{{ asset('/petpicture.png') }}" alt="Healthy Paws" class="transition-transform duration-500 hover:scale-105">
         </div>
-        
-   
+
+
         <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left px-6 animate-fade-in-right">
             <h1 class="text-5xl font-extrabold text-gray-800 sm:text-6xl">
                 Healthy Paws
