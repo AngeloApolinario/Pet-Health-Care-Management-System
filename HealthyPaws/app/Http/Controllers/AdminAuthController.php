@@ -1,61 +1,59 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Admin;
+use App\Models\Pet;
+use App\Models\User;
+use App\Models\Schedule;
+use Carbon\Carbon;
 
-class UserController extends Controller
+class AdminAuthController extends Controller
 {
+    public function showLoginForm()
+    {
+        return view('admin.auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::guard('admin')->attempt($credentials)) {
+            return redirect()->route('admin.dashboard')->with('success', 'Logged in successfully!');
+        }
+
+        return back()->withErrors(['email' => 'Invalid credentials'])->withInput();
+    }
+
+
+
     public function index()
     {
-        $users = User::all();
-        return view('admin.users.index', compact('users'));
+        $totalUsers = User::count();
+        $totalPets = Pet::count();
+        $totalAppointments = Schedule::count();
+        $appointmentsToday = Schedule::whereDate('dateTime', Carbon::today())->count();
+
+        // Get the latest 5 appointments with pet and user relationships
+        $recentAppointments = Schedule::with(['pet', 'user'])->latest()->limit(5)->get();
+
+        return view('admin.dashboard', compact('totalUsers', 'totalPets', 'totalAppointments', 'appointmentsToday', 'recentAppointments'));
     }
 
-    public function create()
+
+
+    public function logout(Request $request)
     {
-        return view('admin.users.create');
-    }
+        Auth::guard('admin')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
-        ]);
-
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
-
-        return redirect()->route('admin.users.index')->with('success', 'User added successfully!');
-    }
-
-    public function edit(User $user)
-    {
-        return view('admin.users.edit', compact('user'));
-    }
-
-    public function update(Request $request, User $user)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $user->id,
-        ]);
-
-        $user->update($request->only('name', 'email'));
-
-        return redirect()->route('admin.users.index')->with('success', 'User updated successfully!');
-    }
-
-    public function destroy(User $user)
-    {
-        $user->delete();
-        return redirect()->route('admin.users.index')->with('success', 'User deleted successfully!');
+        return redirect()->route('admin.login')->with('success', 'Logged out successfully!');
     }
 }

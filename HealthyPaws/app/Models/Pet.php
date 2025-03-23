@@ -10,7 +10,7 @@ class Pet extends Model
     use HasFactory;
     protected $table = 'pets';
 
-    protected $primaryKey = 'petID';
+
 
     protected $fillable = [
         'user_id',
@@ -26,6 +26,10 @@ class Pet extends Model
     }
     public function schedules()
     {
-        return $this->hasMany(Schedule::class);
+        return $this->hasMany(Schedule::class, 'pet_id');
+    }
+    public function medicalRecords()
+    {
+        return $this->hasMany(MedicalRecord::class);
     }
 }

@@ -25,9 +25,10 @@
                 @foreach($appointments as $appointment)
                 <tr class="hover:bg-gray-50">
                     <td class="border border-gray-300 px-4 py-2">{{ $appointment->dateTime }}</td>
-                    <td class="border border-gray-300 px-4 py-2">
-                        {{ $appointment->pet ? $appointment->pet->name : 'No pet selected' }}
+                    <td class="py-3 px-4">
+                        {{ optional($appointment->pet)->name ?? 'Unknown Pet' }}
                     </td>
+
                     <td class="border border-gray-300 px-4 py-2">{{ $appointment->reason }}</td>
                     <td class="border border-gray-300 px-4 py-2 flex space-x-2">
                         <a href="{{ route('schedules.edit', $appointment) }}" class="text-blue-500 hover:underline">

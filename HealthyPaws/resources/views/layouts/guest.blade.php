@@ -16,7 +16,7 @@
 
 <body class="font-sans text-gray-900 antialiased relative">
 
-    <div class="absolute inset-0 bg-cover bg-center" 
+    <div class="absolute inset-0 bg-cover bg-center"
         style="background-image: url('{{ asset('background.png') }}'); filter: blur(8px); transform: scale(1.1);">
     </div>
 

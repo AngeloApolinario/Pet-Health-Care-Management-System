@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        if (!Auth::guard('admin')->check()) {
-            return redirect('/admin/login'); 
+        if (!auth('admin')->check()) {
+            return redirect()->route('admin.login')->with('error', 'Access denied!');
         }
 
         return $next($request);
