@@ -9,28 +9,40 @@
                 At Healthy Paws, we provide top-quality pet care services to keep your furry companions happy and healthy. Explore our services below and book an appointment with ease.
             </p>
 
-            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <img class="w-32 h-32 mx-auto" src="{{ asset('pethealth.png') }}" alt="Health Consultation">
-                    <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Pet Health Consultation</h3>
-                    <p class="text-center text-gray-600 mt-2">
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center">
+                    <img class="w-32 h-32" src="{{ asset('pethealth.png') }}" alt="Health Consultation">
+                    <h3 class="text-xl font-semibold mt-4 text-gray-800">Pet Health Consultation</h3>
+                    <p class="text-gray-600 mt-2">
                         Ensure your pet’s well-being with a check-up from our expert veterinarians.
                     </p>
                 </div>
 
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <img class="w-32 h-32 mx-auto" src="{{ asset('deworming.png') }}" alt="Deworming Services">
-                    <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Deworming Services</h3>
-                    <p class="text-center text-gray-600 mt-2">
+                <!-- Service 2 -->
+                <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center">
+                    <img class="w-32 h-32" src="{{ asset('deworming.png') }}" alt="Deworming Services">
+                    <h3 class="text-xl font-semibold mt-4 text-gray-800">Deworming Services</h3>
+                    <p class="text-gray-600 mt-2">
                         Protect your pet from harmful parasites with our professional deworming treatment.
                     </p>
                 </div>
 
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <img class="w-32 h-32 mx-auto" src="{{ asset('neutering.png') }}" alt="Neutering Procedure">
-                    <h3 class="text-xl font-semibold text-center mt-4 text-gray-800">Neutering (Castration)</h3>
-                    <p class="text-center text-gray-600 mt-2">
+                <!-- Service 3 -->
+                <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center">
+                    <img class="w-32 h-32" src="{{ asset('neutering.png') }}" alt="Neutering Procedure">
+                    <h3 class="text-xl font-semibold mt-4 text-gray-800">Neutering (Castration)</h3>
+                    <p class="text-gray-600 mt-2">
                         A safe and effective procedure that prevents reproduction and improves pet behavior.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center">
+                    <img class="w-32 h-32" src="{{ asset('vaccine.png') }}" alt="Vaccination Service">
+                    <h3 class="text-xl font-semibold mt-4 text-gray-800">Pet Vaccination</h3>
+                    <p class="text-gray-600 mt-2">
+                        Keep your pets safe from deadly diseases with our complete vaccination program.
                     </p>
                 </div>
             </div>
