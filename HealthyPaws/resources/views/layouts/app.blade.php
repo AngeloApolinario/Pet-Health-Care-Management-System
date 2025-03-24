@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,12 +20,11 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen relative">
-        <!-- Navbar (Ensure it stays visible) -->
+
         <div class="relative z-20">
             @include('layouts.navigation')
         </div>
 
-        <!-- Page Heading (Ensure it stays above the blur) -->
         @isset($header)
         <header class="bg-white shadow relative z-20">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -32,7 +33,6 @@
         </header>
         @endisset
 
-        <!-- Main Section with Blurred Background -->
         <main class="relative z-10">
             <!-- Background Layer (Blurred but does not cover navbar) -->
             <div class="absolute inset-0 bg-cover bg-center"

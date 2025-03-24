@@ -52,6 +52,10 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="route('pets.index')">
+                            {{ __('My Pets') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -93,7 +97,6 @@
             <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                 {{ __('Contact Us') }}
             </x-responsive-nav-link>
-            
         </div>
 
         <!-- Responsive Settings Options -->
@@ -106,6 +109,10 @@
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('pets.index')">
+                    {{ __('My Pets') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
