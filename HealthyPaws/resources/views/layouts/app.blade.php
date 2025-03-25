@@ -9,6 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Healthy Paws</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('logo.png') }}">
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

@@ -56,6 +56,10 @@
                             {{ __('My Pets') }}
                         </x-dropdown-link>
 
+                        <x-responsive-nav-link :href="route('schedules.index')">
+                            {{ __('My Schedule') }}
+                        </x-responsive-nav-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -113,6 +117,10 @@
 
                 <x-responsive-nav-link :href="route('pets.index')">
                     {{ __('My Pets') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('schedules.index')">
+                    {{ __('My Schedule') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
