@@ -24,18 +24,27 @@
                     <option value="{{ $pet->id }}">{{ $pet->name }}</option>
                     @endforeach
                 </select>
+                @error('pet_id')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div>
                 <label for="dateTime" class="text-lg font-semibold text-gray-700 block mb-2">Appointment Date & Time</label>
-                <input type="datetime-local" name="dateTime" id="dateTime" requiredc
+                <input type="datetime-local" name="dateTime" id="dateTime" required
                     class="w-full border-gray-300 rounded-lg p-3 text-lg">
+                @error('dateTime')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div>
                 <label for="reason" class="text-lg font-semibold text-gray-700 block mb-2">Reason for Appointment</label>
                 <textarea name="reason" id="reason" required
                     class="w-full border-gray-300 rounded-lg p-3 text-lg h-32"></textarea>
+                @error('reason')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <button type="submit" class="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-600">

@@ -9,10 +9,19 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    // Show all users
-    public function index()
+
+    public function index(Request $request)
     {
-        $users = User::all();
+        $query = User::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('name', 'like', "%{$search}%")
+                ->orWhere('email', 'like', "%{$search}%");
+        }
+
+        $users = $query->orderBy('created_at', 'desc')->get();
+
         return view('admin.users.index', compact('users'));
     }
 

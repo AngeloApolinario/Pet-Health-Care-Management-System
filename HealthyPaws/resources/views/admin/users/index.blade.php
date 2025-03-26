@@ -2,7 +2,15 @@
 
 @section('content')
 <h2 class="text-2xl font-bold mb-4">Manage Users</h2>
+<!-- Search Form -->
+<form method="GET" action="{{ route('users.index') }}" class="mb-4 mt-4">
+    <input type="text" name="search" placeholder="Search users..." value="{{ request('search') }}"
+        class="px-4 py-2 border rounded-lg">
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Search</button>
+</form>
 <a href="{{ route('users.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">Add New User</a>
+
+
 
 <table class="mt-4 w-full border-collapse border">
     <thead>

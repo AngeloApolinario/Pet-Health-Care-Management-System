@@ -10,9 +10,21 @@ use Illuminate\Http\Request;
 
 class AdminScheduleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $schedules = Schedule::with('pet.user')->get();
+        $query = Schedule::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->whereHas('pet', function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%");
+            })->orWhereHas('user', function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%");
+            })->orWhere('reason', 'like', "%{$search}%");
+        }
+
+        $schedules = $query->orderBy('created_at', 'desc')->get();
+
         return view('admin.schedules.index', compact('schedules'));
     }
 

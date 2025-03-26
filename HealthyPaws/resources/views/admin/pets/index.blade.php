@@ -3,6 +3,11 @@
 @section('content')
 <div class="bg-white p-6 rounded-lg shadow-md">
     <h2 class="text-2xl font-bold mb-4">Manage Pets</h2>
+    <form method="GET" action="{{ route('admin.pets.index') }}" class="mb-4">
+        <input type="text" name="search" placeholder="Search pets..." value="{{ request('search') }}"
+            class="px-4 py-2 border rounded-lg">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Search</button>
+    </form>
 
     <a href="{{ route('admin.pets.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md mb-4 inline-block">
         Add New Pet

@@ -8,27 +8,32 @@
 <form action="{{ route('admin.schedules.store') }}" method="POST" class="bg-white p-6 rounded-lg shadow-lg">
     @csrf
 
-    <label class="block mb-2">Pet:</label>
-    <select name="pet_id" required class="w-full border px-4 py-2 rounded mb-4">
-        @foreach($pets as $pet)
-        <option value="{{ $pet->id }}">{{ $pet->name }} ({{ $pet->user->name }})</option>
-        @endforeach
-    </select>
+    <div>
+        <label for="pet_id" class="block text-lg font-medium text-gray-700">Select Your Pet</label>
+        <select name="pet_id" id="pet_id" required class="w-full border-gray-300 rounded-lg p-3 text-lg mb-4">
+            <option value="">-- Choose a Pet --</option>
+            @foreach($pets as $pet)
+            <option value="{{ $pet->id }}">{{ $pet->name }} ({{ $pet->user->name }})</option>
+            @endforeach
+        </select>
+    </div>
 
-    <label class="block mb-2">Date:</label>
-    <input type="date" name="date" required class="w-full border px-4 py-2 rounded mb-4">
+    <div>
+        <label for="dateTime" class="block text-lg font-medium text-gray-700">Appointment Date & Time</label>
+        <input type="datetime-local" name="dateTime" id="dateTime" required
+            class="w-full border-gray-300 rounded-lg p-3 text-lg mb-4">
+    </div>
 
-    <label class="block mb-2">Time:</label>
-    <input type="time" name="time" required class="w-full border px-4 py-2 rounded mb-4">
+    <div>
+        <label for="reason" class="block text-lg font-medium text-gray-700">Reason for Appointment</label>
+        <textarea name="reason" id="reason" required
+            class="w-full border-gray-300 rounded-lg p-3 text-lg h-32 mb-4"></textarea>
+    </div>
 
-    <label class="block mb-2">Status:</label>
-    <select name="status" required class="w-full border px-4 py-2 rounded mb-4">
-        <option value="Pending">Pending</option>
-        <option value="Confirmed">Confirmed</option>
-        <option value="Completed">Completed</option>
-    </select>
 
-    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save Schedule</button>
+
+    <button type="submit" class="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-600">
+        Save Schedule
+    </button>
 </form>
-
 @endsection

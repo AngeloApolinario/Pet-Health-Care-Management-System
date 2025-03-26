@@ -28,7 +28,7 @@ class ScheduleController extends Controller
     {
         $request->validate([
             'pet_id' => 'nullable|exists:pets,id',
-            'dateTime' => 'required|date',
+            'dateTime' => 'required|date|after_or_equal:today',
             'reason' => 'required|string|max:500',
         ]);
 

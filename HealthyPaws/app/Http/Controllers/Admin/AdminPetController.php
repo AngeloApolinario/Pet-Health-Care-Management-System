@@ -8,9 +8,19 @@ use Illuminate\Http\Request;
 
 class AdminPetController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $pets = Pet::all();
+        $query = Pet::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('name', 'like', "%{$search}%")
+                ->orWhere('breed', 'like', "%{$search}%")
+                ->orWhere('age', 'like', "%{$search}%");
+        }
+
+        $pets = $query->orderBy('created_at', 'desc')->get();
+
         return view('admin.pets.index', compact('pets'));
     }
 
